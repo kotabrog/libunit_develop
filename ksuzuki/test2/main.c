@@ -42,7 +42,7 @@ int main()
 	int	status;
 
 	// status = execute_func(ft_len_test_simple);
-	// status = execute_func(ft_len_test_simple_ko);
-	status = execute_func(ft_len_test_simple_seg);
+	status = execute_func(ft_len_test_simple_ko);
+	// status = execute_func(ft_len_test_simple_seg);
 	printf("status: %d\n", status);
 }

@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   01_strlen_normal_test.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hida <hida@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 18:44:22 by hida              #+#    #+#             */
-/*   Updated: 2021/05/08 19:36:33 by apple            ###   ########.fr       */
+/*   Created: 2021/05/08 21:34:30 by hida              #+#    #+#             */
+/*   Updated: 2021/05/08 21:34:34 by hida             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../framework/libunit.h"
-#include "real_tests.h"
+#include "../../framework/libunit.h"
+#include "../../libft/libft.h"
 
-int	main(void)
+int strdup_normal_test(void)
 {
-	t_result	result;
-	// スタートの合図の出力
-	put_start("libft");
+  char *str1;
+  char *str2;
 
-	// 初期化
-	data_init(&result);
+  str1 = strdup("test");
+  str2 = ft_strdup("test");
 
-	// ランチャーの実行
-	// launcher(result);
-	// launcher(result);
-	// launcher(result);
-
-	print_result("All", result.success_num, result.total_num);
-	return (0);
+  if (strcmp(str1, str2) == 0)
+    return (0);
+  else
+    return (-1);
 }

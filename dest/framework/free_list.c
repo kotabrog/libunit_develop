@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free_list.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hida <hida@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 18:44:22 by hida              #+#    #+#             */
-/*   Updated: 2021/05/08 19:36:33 by apple            ###   ########.fr       */
+/*   Created: 2021/05/08 21:07:13 by hida              #+#    #+#             */
+/*   Updated: 2021/05/08 21:07:19 by hida             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../framework/libunit.h"
-#include "real_tests.h"
+#include "libunit.h"
 
-int	main(void)
+void  free_list(t_unit_test *list)
 {
-	t_result	result;
-	// スタートの合図の出力
-	put_start("libft");
+  t_unit_test *tmp;
 
-	// 初期化
-	data_init(&result);
-
-	// ランチャーの実行
-	// launcher(result);
-	// launcher(result);
-	// launcher(result);
-
-	print_result("All", result.success_num, result.total_num);
-	return (0);
+  while (list)
+  {
+    tmp = list->next;
+    free(list);
+    list = tmp;
+  }
 }

@@ -14,6 +14,7 @@
 # define LIBUNIT_H
 
 # include <sys/wait.h>
+# include <signal.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
@@ -26,7 +27,6 @@ typedef struct	s_unit_test
 {
 	char			*func_name;
 	int				(*func)(void);
-	struct s_unit_test	*last;
 	struct s_unit_test	*next;
 }				t_unit_test;
 
@@ -37,5 +37,6 @@ typedef struct	s_result
 }				t_result;
 
 int				execute_func(int (*func)(void));
+int				launch_tests(t_unit_test *list, t_result *result);
 
 #endif

@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   print_result.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hida <hida@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 18:44:22 by hida              #+#    #+#             */
-/*   Updated: 2021/05/08 19:36:33 by apple            ###   ########.fr       */
+/*   Created: 2021/05/08 19:23:52 by hida              #+#    #+#             */
+/*   Updated: 2021/05/08 19:35:40 by apple            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libunit.h"
 
-int	main(void)
+void	print_result(char *str, int success_num, int total_num)
 {
-	t_result	*result;
-	// スタートの合図の出力
-	put_start("libft");
-
-	// 初期化
-	data_init(result);
-
-	// ランチャーの実行
-	// launcher(result);
-	// launcher(result);
-	// launcher(result);
-
-	print_result("All", result->success_num, result->total_num);
-	return (0);
+	printf("------------------------\n");
+	printf("%d/%d %s tests checked.\n", success_num, total_num, str);
+	printf("------------------------\n");
 }

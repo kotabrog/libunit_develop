@@ -10,22 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libunit.h"
+#include "../framework/libunit.h"
 
 int	main(void)
 {
-	t_result	*result;
+	t_result	result;
 	// スタートの合図の出力
 	put_start("libft");
 
 	// 初期化
-	data_init(result);
+	data_init(&result);
 
 	// ランチャーの実行
 	// launcher(result);
 	// launcher(result);
 	// launcher(result);
 
-	print_result("All", result->success_num, result->total_num);
+	print_result("All", result.success_num, result.total_num);
 	return (0);
 }

@@ -22,6 +22,8 @@ static void	put_status(int status)
 		printf("SEGV");
 	else if (status == SIGBUS)
 		printf("BUSE");
+	else if (status == SIGABRT)
+		printf("ABORT");
 	else
 		printf("UNEXPECTED ERROR");
 }

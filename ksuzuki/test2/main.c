@@ -37,12 +37,33 @@ int ft_len_test_simple_seg(void)
       return (-1);
 }
 
+int ft_strcpy_test_simple_bus(void)
+{
+	if (strcpy("abc", "cde"))
+		return (0);
+	else
+		return (-1);
+}
+
+int ft_strcpy_test_simple_abort(void)
+{
+	char *s;
+
+	s = "test";
+	if (strcpy(s, s))
+		return (0);
+	else
+		return (-1);
+}
+
 int main()
 {
 	int	status;
 
 	// status = execute_func(ft_len_test_simple);
-	status = execute_func(ft_len_test_simple_ko);
+	// status = execute_func(ft_len_test_simple_ko);
 	// status = execute_func(ft_len_test_simple_seg);
+	status = execute_func(ft_strcpy_test_simple_bus);
+	// status = execute_func(ft_strcpy_test_simple_abort);
 	printf("status: %d\n", status);
 }

@@ -6,7 +6,7 @@
 /*   By: ksuzuki <ksuzuki@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 16:43:20 by ksuzuki           #+#    #+#             */
-/*   Updated: 2021/05/08 17:13:30 by ksuzuki          ###   ########.fr       */
+/*   Updated: 2021/05/08 17:21:36 by ksuzuki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <sys/wait.h>
 # include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
 
 # define SUCCESS 0
 # define ERROR 1
@@ -34,5 +36,6 @@ typedef struct	s_result
 	int			total_num;
 }				t_result;
 
+int				execute_func(int (*func)(void));
 
 #endif

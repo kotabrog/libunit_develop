@@ -29,7 +29,6 @@ int launch_tests(t_unit_test *testlist, t_result *result)
 
 int launcher(t_result *result)
 {
-{
 	t_unit_test *testlist;
 
 	// puts("STRLEN:");

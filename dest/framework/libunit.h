@@ -14,6 +14,7 @@
 # define LIBUNIT_H
 
 # include <sys/wait.h>
+# include <signal.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
@@ -36,6 +37,7 @@ typedef struct s_result
 }				t_result;
 
 int				execute_func(int (*func)(void));
+int				launch_tests(t_unit_test *list, t_result *result, char *test_func_name);
 void			put_start(char *str);
 void			data_init(t_result *result);
 void			print_result(char *str, int success_num, int total_num);

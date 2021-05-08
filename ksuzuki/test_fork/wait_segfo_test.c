@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 	{
 		// child
 		puts ("child start");
-		sleep (2);      // 子プロセスの長い処理
+		sleep (1);      // 子プロセスの長い処理
 		int *a = 0;
 		*a = 0;
 		if (errno)
@@ -48,7 +48,12 @@ int main(int argc, char *argv[])
 		// wait が失敗した
 		err (ERROR, "wait error");
 	}
-
+	printf("status checkn\n");
+	printf("WIFEXITED: %d\n", WIFEXITED(status));
+	printf("WEXITSTATUS: %d\n", WEXITSTATUS(status));
+	printf("WIFSIGNALED: %d\n", WIFSIGNALED(status));
+	if (WIFSIGNALED(status))
+		printf("WTERMSIG: %d\n", WTERMSIG(status));
 	printf ("child = %d, status=%d\n", wait_pid, status);
 
 	exit (SUCCESS);

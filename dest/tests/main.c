@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_strlen_zero_test.c                              :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hida <hida@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 21:34:30 by hida              #+#    #+#             */
-/*   Updated: 2021/05/09 20:13:36 by apple            ###   ########.fr       */
+/*   Created: 2021/05/08 18:44:22 by hida              #+#    #+#             */
+/*   Updated: 2021/05/09 20:56:54 by apple            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../framework/libunit.h"
-#include "../../libft/libft.h"
-#include "../real_tests.h"
+#include "../framework/libunit.h"
+#include "tests.h"
 
-int	strlen_zero_test(void)
+int	main(void)
 {
-	char	*str;
+	t_result	result;
+	// スタートの合図の出力
+	put_start("unit-test");
 
-	str = "";
-	if (strlen(str) == ft_strlen(str))
+	// 初期化
+	data_init(&result);
+
+	// ランチャーの実行
+	// strlen_launcher(&result);
+	// strncmp_launcher(&result);
+	// strdup_launcher(&result);
+
+	print_result("All", result.success_num, result.total_num);
+	if (result.success_num == result.total_num)
 		return (0);
 	else
 		return (-1);

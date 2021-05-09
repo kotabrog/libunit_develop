@@ -22,7 +22,6 @@ $(NAME): $(OBJS)
 	$(MAKE) -C $(TESTDIR)
 	$(CC) $(OBJS) -L../framework/ -lunit -L../libft -lft -o $(NAME)
 
-
 %.o:%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 

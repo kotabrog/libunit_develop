@@ -10,9 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBUNIT_H
-#define LIBUNIT_H
+#ifndef REAL_TESTS_H
+#define REAL_TESTS_H
 
+int strlen_launcher(t_result *result);
 int strlen_normal_test(void);
+int strlen_zero_test(void);
+int strlen_big_test(void);
+
+int strncmp_launcher(t_result *result);
+int strncmp_normal_test(void);
+int strncmp_plus_test(void);
+int strncmp_minus_test(void);
+int strncmp_zerostr_test(void);
+
+int strdup_launcher(t_result *result);
+int strdup_normal_test(void);
+int strdup_zerostr_test(void);
+int strdup_bigstr_test(void);
 
 #endif

@@ -12,11 +12,28 @@
 
 #include "libunit.h"
 
+int ut_ft_strlen(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+void ut_ft_putstr(char *str)
+{
+	write(1, str, ut_ft_strlen(str));
+}
+
 void	put_start(char *str)
 {
-	printf("\n");
-	printf("*********************************\n");
-	printf("** 42 - Unit Tests (%s)****\n", str);
-	printf("*********************************\n");
-	printf("\n");
+	ut_ft_putstr("\n");
+	ut_ft_putstr("*********************************\n");
+	ut_ft_putstr("** 42 - Unit Tests (");
+	ut_ft_putstr(str);
+	ut_ft_putstr(")****\n");
+	ut_ft_putstr("*********************************\n");
+	ut_ft_putstr("\n");
 }

@@ -26,10 +26,7 @@ int	main(void)
 	strlen_launcher(&result);
 	strncmp_launcher(&result);
 	strdup_launcher(&result);
-	// launcher(result);
-	// launcher(result);
-	// launcher(result);
-
+	
 	print_result("All", result.success_num, result.total_num);
 	if (result.success_num == result.total_num)
 		return (0);

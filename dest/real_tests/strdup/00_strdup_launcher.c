@@ -19,7 +19,7 @@ int	strdup_launcher(t_result *result)
 	t_unit_test	*testlist;
 
 	testlist = NULL;
-	printf("STRDUP:\n");
+	ut_ft_putstr("STRDUP:\n");
 	load_test(&testlist, "Normal test", &strdup_normal_test);
 	load_test(&testlist, "Zero string test", &strdup_zerostr_test);
 	load_test(&testlist, "Big string test", &strdup_bigstr_test);

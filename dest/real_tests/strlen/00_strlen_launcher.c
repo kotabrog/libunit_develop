@@ -19,7 +19,7 @@ int	strlen_launcher(t_result *result)
 	t_unit_test	*testlist;
 
 	testlist = NULL;
-	printf("STRLEN:\n");
+	ut_ft_putstr("STRLEN:\n");
 	load_test(&testlist, "Normal test", &strlen_normal_test);
 	load_test(&testlist, "Zero test", &strlen_zero_test);
 	load_test(&testlist, "Bigger string test", &strlen_big_test);

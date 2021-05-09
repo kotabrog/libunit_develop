@@ -15,22 +15,24 @@
 static void	put_status(int status)
 {
 	if (status == SUCCESS)
-		printf("OK");
+		ut_ft_putstr("\x1b[32mOK\x1b[39m");
 	else if (status == KO)
-		printf("KO");
+		ut_ft_putstr("\x1b[31mKO\x1b[39m");
 	else if (status == SIGSEGV)
-		printf("SEGV");
+		ut_ft_putstr("\x1b[31mSEGV\x1b[39m");
 	else if (status == SIGBUS)
-		printf("BUSE");
+		ut_ft_putstr("\x1b[31mBUSE\x1b[39m");
 	else
-		printf("UNEXPECTED ERROR");
+		ut_ft_putstr("\x1b[31mUNEXPECTED ERROR\x1b[39m");
 }
 
 static void	put_one_result(char *func_name, int status)
 {
-	printf("    > %s : [", func_name);
+	ut_ft_putstr("    > ");
+	ut_ft_putstr(func_name);
+	ut_ft_putstr(" : [");
 	put_status(status);
-	printf("]\n");
+	ut_ft_putstr("]\n");
 }
 
 static int	result_update(t_result *result, int status)
@@ -61,7 +63,7 @@ int	launch_tests(t_unit_test *list, t_result *result, char *test_func_name)
 		result_update(&temp, status);
 		list = list->next;
 	}
-	printf("\n");
+	ut_ft_putstr("\n");
 	print_result(test_func_name, temp.success_num, temp.total_num);
 	all_result_update(result, &temp);
 	return (SUCCESS);

@@ -6,7 +6,7 @@
 /*   By: ksuzuki <ksuzuki@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 16:43:20 by ksuzuki           #+#    #+#             */
-/*   Updated: 2021/05/08 19:35:00 by apple            ###   ########.fr       */
+/*   Updated: 2021/05/09 22:40:30 by apple            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,9 @@ void			put_start(char *str);
 void			data_init(t_result *result);
 void			print_result(char *str, int success_num, int total_num);
 void			load_test(t_unit_test **list, char *pstr, int (*fp)(void));
+int			ut_ft_strlen(char *str);
+void			ut_ft_putstr(char *str);
+int			ut_array_convert(int n, char *array);
+char *ut_ft_itoa(int n);
 
 #endif

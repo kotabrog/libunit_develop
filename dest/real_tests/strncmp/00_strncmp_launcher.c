@@ -19,7 +19,7 @@ int	strncmp_launcher(t_result *result)
 	t_unit_test	*testlist;
 
 	testlist = NULL;
-	printf("STRNCMP:\n");
+	ut_ft_putstr("STRNCMP:\n");
 	load_test(&testlist, "Normal test", &strncmp_normal_test);
 	load_test(&testlist, "Normal(Plus case) test", &strncmp_plus_test);
 	load_test(&testlist, "Normal(Minus case) test", &strncmp_minus_test);

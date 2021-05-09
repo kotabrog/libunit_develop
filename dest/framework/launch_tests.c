@@ -22,6 +22,8 @@ static void	put_status(int status)
 		ut_ft_putstr("\x1b[31mSEGV\x1b[39m");
 	else if (status == SIGBUS)
 		ut_ft_putstr("\x1b[31mBUSE\x1b[39m");
+	else if (status == SIGABRT)
+		ut_ft_putstr("\x1b[31mABORT\x1b[39m");
 	else
 		ut_ft_putstr("\x1b[31mUNEXPECTED ERROR\x1b[39m");
 }

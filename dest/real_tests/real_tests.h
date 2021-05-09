@@ -13,6 +13,8 @@
 #ifndef REAL_TESTS_H
 #define REAL_TESTS_H
 
+#include <string.h>
+
 int strlen_launcher(t_result *result);
 int strlen_normal_test(void);
 int strlen_zero_test(void);

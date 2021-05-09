@@ -32,7 +32,7 @@ $(NAME): $(OBJS)
 %.o:%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-test: fclean all
+test: all
 	./$(NAME) 
 # ./$(NAME) > $(REPORT)
 # cat $(REPORT)

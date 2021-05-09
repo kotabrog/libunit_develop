@@ -18,7 +18,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
-# include <string.h>
 
 # define SUCCESS 0
 # define ERROR 1

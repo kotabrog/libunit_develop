@@ -6,7 +6,7 @@
 /*   By: hida <hida@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 18:44:22 by hida              #+#    #+#             */
-/*   Updated: 2021/05/08 19:36:33 by apple            ###   ########.fr       */
+/*   Updated: 2021/05/09 20:56:54 by apple            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,8 @@ int	main(void)
 	// launcher(result);
 
 	print_result("All", result.success_num, result.total_num);
-	return (0);
+	if (result.success_num == result.total_num)
+		return (0);
+	else
+		return (-1);
 }

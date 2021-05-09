@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   04_strncmp_zerostr_test.c                          :+:      :+:    :+:   */
+/*   00_strncmp_launcher.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hida <hida@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 21:34:30 by hida              #+#    #+#             */
-/*   Updated: 2021/05/09 09:41:36 by hida             ###   ########.fr       */
+/*   Created: 2021/05/08 22:58:56 by hida              #+#    #+#             */
+/*   Updated: 2021/05/09 09:40:12 by hida             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../framework/libunit.h"
 #include "../../libft/libft.h"
+#include "../real_tests.h"
 
-int strncmp_zerostr_test(void)
+int strncmp_launcher(t_result *result)
 {
-  char *s1;
-  char *s2;
+  t_unit_test *testlist;
 
-  s1 = "";
-  s2 = "";
-  if (strncmp(s1,s2, 4) == ft_strncmp(s1, s2, 4))
-    return (0);
-  else
-    return (-1);
+  testlist = NULL;
+  printf("STRNCMP:\n");
+  load_test(&testlist, "Normal test", &strncmp_normal_test);
+  load_test(&testlist, "Normal(Plus case) test", &strncmp_plus_test);
+  load_test(&testlist, "Normal(Minus case) test", &strncmp_minus_test);
+  load_test(&testlist, "Zero string test", &strncmp_zerostr_test);
+  return(launch_tests(testlist, result, "STRNCMP"));
 }

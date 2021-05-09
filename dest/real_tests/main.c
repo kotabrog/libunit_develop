@@ -23,6 +23,9 @@ int	main(void)
 	data_init(&result);
 
 	// ランチャーの実行
+	strlen_launcher(&result);
+	strncmp_launcher(&result);
+	strdup_launcher(&result);
 	// launcher(result);
 	// launcher(result);
 	// launcher(result);

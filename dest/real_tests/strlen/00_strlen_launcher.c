@@ -18,12 +18,10 @@ int strlen_launcher(t_result *result)
 {
   t_unit_test *testlist;
 
-  printf("STRLEN:\n");
   testlist = NULL;
-  load_test(testlist, "Normal test", &strlen_normal_test);
-  // load_test(testlist, "NULL test", &null_test);
-  // load_test(&testlist, "Bigger string test", &bigger_str_test); /* This test won't be loaded */
-
-  // 実行する
+  printf("STRLEN:\n");
+  load_test(&testlist, "Normal test", &strlen_normal_test);
+  load_test(&testlist, "Zero test", &strlen_zero_test);
+  load_test(&testlist, "Bigger string test", &strlen_big_test);
   return(launch_tests(testlist, result, "STRLEN"));
 }

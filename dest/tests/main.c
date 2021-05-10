@@ -23,9 +23,9 @@ int	main(void)
 	data_init(&result);
 
 	// ランチャーの実行
-	// strlen_launcher(&result);
-	// strncmp_launcher(&result);
-	// strdup_launcher(&result);
+	strlen_launcher(&result);
+	strlen_plus_launcher(&result);
+	strlcpy_launcher(&result);
 
 	print_result("All", result.success_num, result.total_num);
 	if (result.success_num == result.total_num)

@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tests.h                                            :+:      :+:    :+:   */
+/*   00_strlen_launcher.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hida <hida@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 23:04:23 by hida              #+#    #+#             */
-/*   Updated: 2021/05/09 21:09:26 by hida             ###   ########.fr       */
+/*   Created: 2021/05/08 22:58:56 by hida              #+#    #+#             */
+/*   Updated: 2021/05/09 20:16:23 by apple            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TESTS_H
-# define TESTS_H
+#include "../../framework/libunit.h"
+#include "../../libft/libft.h"
+#include "../tests.h"
 
-#include <string.h>
+int	strlen_launcher(t_result *result)
+{
+	t_unit_test	*testlist;
 
-int	strlen_launcher(t_result *result);
-int	strlen_test_ok(void);
-int	strlen_test_segv(void);
-
-int	strlen_plus_launcher(t_result *result);
-int	strlen_test_ng(void);
-
-int	strlcpy_launcher(t_result *result);
-int	strlcpy_test_bus(void);
-
-#endif
+	testlist = NULL;
+	ut_ft_putstr("STRLEN:\n");
+	load_test(&testlist, "ok test", strlen_test_ok);
+	load_test(&testlist, "segv test", strlen_test_segv);
+	return (launch_tests(testlist, result, "STRLEN"));
+}

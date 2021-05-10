@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_strlen_segv.c                                   :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksuzuki <ksuzuki@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 23:54:24 by ksuzuki           #+#    #+#             */
-/*   Updated: 2021/05/10 00:04:20 by ksuzuki          ###   ########.fr       */
+/*   Created: 2020/06/23 13:39:49 by ksuzuki           #+#    #+#             */
+/*   Updated: 2021/05/10 22:18:19 by ksuzuki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../tests.h"
+#include "libft_sp.h"
 
-int	strlen_test_segv(void)
+int	ft_strcpy(char *dest, char *src)
 {
-	if (ft_strlen(NULL))
-		return (0);
-	else
-		return (-1);
+	int	i;
+
+	i = 0;
+	if (dest == src)
+		abort();
+	while (src[i])
+	{
+		dest[i] = src[i];
+		++i;
+	}
+	dest[i] = '\0';
+	return (i + 1);
 }

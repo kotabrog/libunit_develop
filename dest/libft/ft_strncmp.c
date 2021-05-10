@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_strlen_segv.c                                   :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksuzuki <ksuzuki@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 23:54:24 by ksuzuki           #+#    #+#             */
-/*   Updated: 2021/05/10 00:04:20 by ksuzuki          ###   ########.fr       */
+/*   Created: 2020/06/23 21:09:44 by ksuzuki           #+#    #+#             */
+/*   Updated: 2021/05/10 20:55:32 by ksuzuki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../tests.h"
+#include "libft.h"
 
-int	strlen_test_segv(void)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	if (ft_strlen(NULL))
+	size_t	i;
+
+	i = 0;
+	if ((s1 == NULL && s2 == NULL) || n == 0)
 		return (0);
-	else
-		return (-1);
+	while (s1[i] && s2[i] && s1[i] == s2[i] && i < n - 1)
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

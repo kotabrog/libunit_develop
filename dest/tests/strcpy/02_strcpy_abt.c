@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   01_strlcpy_bus.c                                   :+:      :+:    :+:   */
+/*   02_strcpy_abt.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksuzuki <ksuzuki@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/10 00:22:31 by ksuzuki           #+#    #+#             */
-/*   Updated: 2021/05/10 00:22:33 by ksuzuki          ###   ########.fr       */
+/*   Created: 2021/05/10 22:13:03 by ksuzuki           #+#    #+#             */
+/*   Updated: 2021/05/10 22:16:36 by ksuzuki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../framework/libunit.h"
-#include "../../libft/libft.h"
 #include "../tests.h"
 
-int	strlcpy_test_bus(void)
+int	strcpy_test_abt(void)
 {
-	if (ft_strlcpy("test", "src", 3) == 3)
+	char	s[2];
+
+	s[0] = 'a';
+	s[1] = '\0';
+	ft_strcpy(s, s);
+	if (strcmp(s, s))
 		return (0);
 	else
 		return (-1);

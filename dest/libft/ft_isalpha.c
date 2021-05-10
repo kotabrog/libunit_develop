@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_strlen_segv.c                                   :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksuzuki <ksuzuki@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 23:54:24 by ksuzuki           #+#    #+#             */
-/*   Updated: 2021/05/10 00:04:20 by ksuzuki          ###   ########.fr       */
+/*   Created: 2020/06/24 16:27:38 by ksuzuki           #+#    #+#             */
+/*   Updated: 2020/06/24 16:37:02 by ksuzuki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../tests.h"
+#include "libft.h"
 
-int	strlen_test_segv(void)
+int	ft_isalpha(int c)
 {
-	if (ft_strlen(NULL))
-		return (0);
-	else
-		return (-1);
+	if (('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z'))
+		return (1);
+	return (0);
 }

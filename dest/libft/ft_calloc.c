@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_strlen_segv.c                                   :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksuzuki <ksuzuki@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 23:54:24 by ksuzuki           #+#    #+#             */
-/*   Updated: 2021/05/10 00:04:20 by ksuzuki          ###   ########.fr       */
+/*   Created: 2020/06/24 23:09:28 by ksuzuki           #+#    #+#             */
+/*   Updated: 2021/05/10 20:52:00 by ksuzuki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../tests.h"
+#include "libft.h"
 
-int	strlen_test_segv(void)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	if (ft_strlen(NULL))
-		return (0);
-	else
-		return (-1);
+	void	*p;
+
+	if (nmemb == 0 || size == 0)
+	{
+		nmemb = 1;
+		size = 1;
+	}
+	p = malloc(nmemb * size);
+	if (p == NULL)
+		return (NULL);
+	ft_bzero(p, nmemb * size);
+	return (p);
 }

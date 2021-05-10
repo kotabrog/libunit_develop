@@ -1,21 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_strlen_segv.c                                   :+:      :+:    :+:   */
+/*   ft_prime_count.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksuzuki <ksuzuki@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 23:54:24 by ksuzuki           #+#    #+#             */
-/*   Updated: 2021/05/10 00:04:20 by ksuzuki          ###   ########.fr       */
+/*   Created: 2021/05/10 21:10:42 by ksuzuki           #+#    #+#             */
+/*   Updated: 2021/05/10 21:24:29 by ksuzuki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../tests.h"
-
-int	strlen_test_segv(void)
+int	ft_is_prime(int num)
 {
-	if (ft_strlen(NULL))
+	int	i;
+
+	i = 2;
+	if (num < 2)
 		return (0);
-	else
-		return (-1);
+	if (num == 2)
+		return (1);
+	while (i < num)
+	{
+		if (num == num / i * i)
+			break ;
+		++i;
+	}
+	if (i == num)
+		return (1);
+	return (0);
+}
+
+int	ft_count_prime(int num)
+{
+	int	i;
+	int	ans;
+
+	i = 2;
+	ans = 0;
+	if (num < 2)
+		return (0);
+	while (i <= num)
+	{
+		if (ft_is_prime(i))
+			++ans;
+		++i;
+	}
+	return (ans);
 }

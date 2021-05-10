@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_strlen_segv.c                                   :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksuzuki <ksuzuki@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 23:54:24 by ksuzuki           #+#    #+#             */
-/*   Updated: 2021/05/10 00:04:20 by ksuzuki          ###   ########.fr       */
+/*   Created: 2020/06/23 19:59:17 by ksuzuki           #+#    #+#             */
+/*   Updated: 2021/05/10 20:55:48 by ksuzuki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../tests.h"
+#include "libft.h"
 
-int	strlen_test_segv(void)
+char	*ft_strrchr(const char *s, int c)
 {
-	if (ft_strlen(NULL))
-		return (0);
-	else
-		return (-1);
+	size_t	n;
+	size_t	i;
+
+	i = 0;
+	n = 0;
+	while (*(s + i))
+	{
+		if (*(s + i) == c)
+			n = i;
+		i++;
+	}
+	if (c == 0)
+		return ((char *)(s + i));
+	if (*s != c && n == 0)
+		return (NULL);
+	return ((char *)(s + n));
 }

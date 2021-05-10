@@ -22,7 +22,10 @@ int	execute_func(int (*func)(void))
 	if (pid == -1)
 		return (ERROR);
 	if (pid == 0)
+	{
+		alarm(ALARM_TIME);
 		exit(!!(*func)());
+	}
 	pid = wait(&status);
 	if (WIFEXITED(status) && !WEXITSTATUS(status))
 		return (SUCCESS);

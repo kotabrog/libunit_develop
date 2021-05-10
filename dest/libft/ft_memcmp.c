@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_strlen_segv.c                                   :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksuzuki <ksuzuki@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 23:54:24 by ksuzuki           #+#    #+#             */
-/*   Updated: 2021/05/10 00:04:20 by ksuzuki          ###   ########.fr       */
+/*   Created: 2020/06/23 11:34:16 by ksuzuki           #+#    #+#             */
+/*   Updated: 2020/06/28 10:57:57 by ksuzuki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../tests.h"
+#include "libft.h"
 
-int	strlen_test_segv(void)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	if (ft_strlen(NULL))
+	size_t			i;
+	unsigned char	*p;
+	unsigned char	*q;
+
+	i = 0;
+	if (s1 == NULL || s2 == NULL || n == 0)
 		return (0);
-	else
-		return (-1);
+	p = (unsigned char *)s1;
+	q = (unsigned char *)s2;
+	while (i < n - 1 && *(p + i) == *(q + i))
+		i++;
+	return (*(p + i) - *(q + i));
 }

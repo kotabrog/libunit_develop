@@ -14,15 +14,21 @@
 # define TESTS_H
 
 #include <string.h>
+#include "../framework/libunit.h"
+#include "../libft_sp/libft_sp.h"
 
 int	strlen_launcher(t_result *result);
 int	strlen_test_ok(void);
 int	strlen_test_segv(void);
 
-int	strlen_plus_launcher(t_result *result);
-int	strlen_test_ng(void);
+int	isnum_launcher(t_result *result);
+int	isnum_test_ng(void);
 
-int	strlcpy_launcher(t_result *result);
-int	strlcpy_test_bus(void);
+int	strcpy_launcher(t_result *result);
+int	strcpy_test_bus(void);
+int	strcpy_test_abt(void);
+
+int	prime_count_launcher(t_result *result);
+int	prime_count_test_tle(void);
 
 #endif

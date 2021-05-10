@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   01_strlen_plus_ng.c                                :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksuzuki <ksuzuki@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 23:54:24 by ksuzuki           #+#    #+#             */
-/*   Updated: 2021/05/10 00:21:04 by ksuzuki          ###   ########.fr       */
+/*   Created: 2020/06/23 14:26:58 by ksuzuki           #+#    #+#             */
+/*   Updated: 2020/06/25 22:18:35 by ksuzuki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../framework/libunit.h"
-#include "../../libft/libft.h"
-#include "../tests.h"
+#include "libft.h"
 
-int	strlen_test_ng(void)
+char	*ft_strchr(const char *s, int c)
 {
-	if (strlen("test") + 1 == ft_strlen("test"))
-		return (0);
-	else
-		return (-1);
+	while (*s && *s != c)
+		s++;
+	if (*s == c)
+		return ((char *)s);
+	return (NULL);
 }

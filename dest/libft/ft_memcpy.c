@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_strlen_plus_launcher.c                          :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksuzuki <ksuzuki@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/10 00:22:12 by ksuzuki           #+#    #+#             */
-/*   Updated: 2021/05/10 00:22:12 by ksuzuki          ###   ########.fr       */
+/*   Created: 2020/06/22 22:17:04 by ksuzuki           #+#    #+#             */
+/*   Updated: 2021/05/10 20:54:36 by ksuzuki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../framework/libunit.h"
-#include "../../libft/libft.h"
-#include "../tests.h"
+#include "libft.h"
 
-int	strlen_plus_launcher(t_result *result)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	t_unit_test	*testlist;
+	size_t	i;
 
-	testlist = NULL;
-	ut_ft_putstr("STRLEN_PLUS:\n");
-	load_test(&testlist, "ng test", strlen_test_ng);
-	return (launch_tests(testlist, result, "STRLEN_PLUS"));
+	i = 0;
+	if (dest == NULL && src == NULL)
+		return (NULL);
+	while (i != n)
+	{
+		*((char *)dest + i) = *((char *)src + i);
+		i++;
+	}
+	return (dest);
 }

@@ -1,21 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_strlen_segv.c                                   :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksuzuki <ksuzuki@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 23:54:24 by ksuzuki           #+#    #+#             */
-/*   Updated: 2021/05/10 00:04:20 by ksuzuki          ###   ########.fr       */
+/*   Created: 2020/06/26 11:10:39 by ksuzuki           #+#    #+#             */
+/*   Updated: 2021/05/10 21:03:30 by ksuzuki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../tests.h"
+#include "libft.h"
 
-int	strlen_test_segv(void)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (ft_strlen(NULL))
-		return (0);
-	else
-		return (-1);
+	char			*p;
+	unsigned int	i;
+	unsigned int	n;
+
+	if (s == NULL)
+		return (NULL);
+	n = ft_strlen(s);
+	p = (char *)malloc(n + 1);
+	if (p == NULL)
+		return (NULL);
+	i = 0;
+	while (i < n)
+	{
+		if (f == NULL)
+			p[i] = s[i];
+		else
+			p[i] = (*f)(i, s[i]);
+		i++;
+	}
+	p[n] = 0;
+	return (p);
 }

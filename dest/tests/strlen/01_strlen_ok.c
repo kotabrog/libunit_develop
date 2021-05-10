@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../framework/libunit.h"
-#include "../../libft/libft.h"
 #include "../tests.h"
 
 int	strlen_test_ok(void)

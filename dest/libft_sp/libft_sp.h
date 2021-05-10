@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_strlen_segv.c                                   :+:      :+:    :+:   */
+/*   libft_sp.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksuzuki <ksuzuki@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 23:54:24 by ksuzuki           #+#    #+#             */
-/*   Updated: 2021/05/10 00:04:20 by ksuzuki          ###   ########.fr       */
+/*   Created: 2021/05/10 21:21:18 by ksuzuki           #+#    #+#             */
+/*   Updated: 2021/05/10 22:18:00 by ksuzuki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../tests.h"
+#ifndef LIBFT_SP_H
+# define LIBFT_SP_H
 
-int	strlen_test_segv(void)
-{
-	if (ft_strlen(NULL))
-		return (0);
-	else
-		return (-1);
-}
+# include <stdlib.h>
+
+int		ft_isnum(char c);
+int		ft_count_prime(int num);
+int		ft_strcpy(char *dest, char *src);
+int		ft_strlen(const char *s);
+
+#endif

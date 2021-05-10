@@ -7,17 +7,20 @@ CFLAGS := -Wall -Werror -Wextra
 STRLENDIR := ./strlen
 STRLENSRC := $(STRLENDIR)/00_strlen_launcher.c $(STRLENDIR)/01_strlen_ok.c $(STRLENDIR)/02_strlen_segv.c
 
-STRLEN_PLUSDIR := ./strlen_plus
-STRLEN_PLUSSRC := $(STRLEN_PLUSDIR)/00_strlen_plus_launcher.c $(STRLEN_PLUSDIR)/01_strlen_plus_ng.c
+ISNUMDIR := ./isnum
+ISNUMSRC := $(ISNUMDIR)/00_isnum_launcher.c $(ISNUMDIR)/01_isnum_ng.c
 
-STRLCPYDIR := ./strlcpy
-STRLCPYSRC := $(STRLCPYDIR)/00_strlcpy_launcher.c $(STRLCPYDIR)/01_strlcpy_bus.c
+STRCPYDIR := ./strcpy
+STRCPYSRC := $(STRCPYDIR)/00_strcpy_launcher.c $(STRCPYDIR)/01_strcpy_bus.c $(STRCPYDIR)/02_strcpy_abt.c
 
-SRCS := main.c $(STRLENSRC) $(STRLEN_PLUSSRC) $(STRLCPYSRC)
+PRIME_COUNTDIR := ./prime_count
+PRIME_COUNTSRC := $(PRIME_COUNTDIR)/00_prime_count_launcher.c $(PRIME_COUNTDIR)/01_prime_count_tle.c
+
+SRCS := main.c $(STRLENSRC) $(ISNUMSRC) $(STRCPYSRC) $(PRIME_COUNTSRC)
 
 OBJS := $(SRCS:%.c=%.o)
 
-TESTDIR := ../libft
+TESTDIR := ../libft_sp
 
 REPORT := test_report.txt
 
@@ -26,7 +29,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(MAKE) -C ../framework
 	$(MAKE) -C $(TESTDIR)
-	$(CC) $(OBJS) -L../framework/ -lunit -L../libft -lft -o $(NAME)
+	$(CC) $(OBJS) -L../framework/ -lunit -L../libft_sp -lft_sp -o $(NAME)
 
 %.o:%.c
 	$(CC) $(CFLAGS) -c $< -o $@

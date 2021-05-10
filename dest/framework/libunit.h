@@ -22,6 +22,7 @@
 # define SUCCESS 0
 # define ERROR 1
 # define KO 255
+# define ALARM_TIME 5
 
 typedef struct s_unit_test
 {
@@ -42,9 +43,9 @@ void			put_start(char *str);
 void			data_init(t_result *result);
 void			print_result(char *str, int success_num, int total_num);
 void			load_test(t_unit_test **list, char *pstr, int (*fp)(void));
-int			ut_ft_strlen(char *str);
+int				ut_ft_strlen(char *str);
 void			ut_ft_putstr(char *str);
-int			ut_array_convert(int n, char *array);
-char *ut_ft_itoa(int n);
+int				ut_array_convert(int n, char *array);
+char 			*ut_ft_itoa(int n);
 
 #endif

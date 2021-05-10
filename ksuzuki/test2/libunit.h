@@ -18,10 +18,14 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <time.h>
+# include <sys/time.h>
+# include <string.h>
 
 # define SUCCESS 0
 # define ERROR 1
 # define KO 255
+# define ALARM_TIME 5
 
 typedef struct	s_unit_test
 {

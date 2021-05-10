@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_strlen_segv.c                                   :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksuzuki <ksuzuki@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 23:54:24 by ksuzuki           #+#    #+#             */
-/*   Updated: 2021/05/10 00:04:20 by ksuzuki          ###   ########.fr       */
+/*   Created: 2020/06/24 17:23:48 by ksuzuki           #+#    #+#             */
+/*   Updated: 2020/06/24 17:26:00 by ksuzuki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../tests.h"
-
-int	strlen_test_segv(void)
+int	ft_toupper(int c)
 {
-	if (ft_strlen(NULL))
-		return (0);
-	else
-		return (-1);
+	if ('a' <= c && c <= 'z')
+		return (c - 'a' + 'A');
+	return (c);
 }

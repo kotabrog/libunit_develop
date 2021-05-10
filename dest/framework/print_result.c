@@ -12,10 +12,10 @@
 
 #include "libunit.h"
 
-int ut_array_convert(int n, char *array)
+int	ut_array_convert(int n, char *array)
 {
-	int len;
-	char minus;
+	int		len;
+	char	minus;
 
 	len = 0;
 	if (n <= 0)
@@ -40,12 +40,12 @@ int ut_array_convert(int n, char *array)
 	return (len);
 }
 
-char *ut_ft_itoa(int n)
+char	*ut_ft_itoa(int n)
 {
-	char *str;
-	int len;
-	char array[30];
-	int i;
+	char	*str;
+	int		len;
+	char	array[30];
+	int		i;
 
 	len = ut_array_convert(n, array);
 	str = (char *)malloc(len + 1);
@@ -65,8 +65,8 @@ char *ut_ft_itoa(int n)
 
 void	print_result(char *str, int success_num, int total_num)
 {
-	char *num1;
-	char *num2;
+	char	*num1;
+	char	*num2;
 
 	num1 = ut_ft_itoa(success_num);
 	num2 = ut_ft_itoa(total_num);

@@ -38,7 +38,8 @@ typedef struct s_result
 }				t_result;
 
 int				execute_func(int (*func)(void));
-int				launch_tests(t_unit_test *list, t_result *result, char *test_func_name);
+int				launch_tests(t_unit_test *list, t_result *result, \
+				char *test_func_name);
 void			put_start(char *str);
 void			data_init(t_result *result);
 void			print_result(char *str, int success_num, int total_num);
@@ -46,6 +47,6 @@ void			load_test(t_unit_test **list, char *pstr, int (*fp)(void));
 int				ut_ft_strlen(char *str);
 void			ut_ft_putstr(char *str);
 int				ut_array_convert(int n, char *array);
-char 			*ut_ft_itoa(int n);
+char			*ut_ft_itoa(int n);
 
 #endif

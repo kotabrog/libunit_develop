@@ -12,14 +12,14 @@
 
 #include "libunit.h"
 
-void  free_list(t_unit_test *list)
+void	free_list(t_unit_test *list)
 {
-  t_unit_test *tmp;
+	t_unit_test	*tmp;
 
-  while (list)
-  {
-    tmp = list->next;
-    free(list);
-    list = tmp;
-  }
+	while (list)
+	{
+		tmp = list->next;
+		free(list);
+		list = tmp;
+	}
 }

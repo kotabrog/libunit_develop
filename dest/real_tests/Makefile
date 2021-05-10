@@ -51,3 +51,5 @@ fclean: clean
 	rm -f  $(NAME) $(REPORT)
 
 re: fclean all
+
+.PHONY: all clean fclean re test

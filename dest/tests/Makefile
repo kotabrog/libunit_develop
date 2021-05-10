@@ -33,8 +33,8 @@ $(NAME): $(OBJS)
 
 test: all
 # ./$(NAME) 
-	./$(NAME) > $(REPORT)
-	cat $(REPORT)
+	-@./$(NAME) > $(REPORT)
+	-@cat $(REPORT)
 
 clean:
 	$(MAKE) clean -C ../framework

@@ -12,9 +12,9 @@
 
 #include "libunit.h"
 
-int ut_ft_strlen(char *str)
+int	ut_ft_strlen(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -22,7 +22,7 @@ int ut_ft_strlen(char *str)
 	return (i);
 }
 
-void ut_ft_putstr(char *str)
+void	ut_ft_putstr(char *str)
 {
 	write(1, str, ut_ft_strlen(str));
 }

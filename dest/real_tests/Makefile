@@ -36,9 +36,10 @@ $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 test: all
-# ./$(NAME) 
+	./$(NAME) 
+
+report: all
 	-@./$(NAME) > $(REPORT)
-	-@cat $(REPORT)
 
 clean:
 	$(MAKE) clean -C ../framework

@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../framework/libunit.h"
-#include "../../libft/libft.h"
 #include "../real_tests.h"
 
 int	strdup_bigstr_test(void)

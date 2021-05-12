@@ -15,7 +15,7 @@
 
 # include <string.h>
 # include "../framework/libunit.h"
-# include "../libft_sp/libft_sp.h"
+# include "libft_sp/libft_sp.h"
 
 int	strlen_launcher(t_result *result);
 int	strlen_test_ok(void);

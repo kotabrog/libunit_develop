@@ -20,7 +20,7 @@ SRCS := main.c $(STRLENSRC) $(STRNCMPSRC) $(STRDUPSRC) $(ATOISRC)
 
 OBJS := $(SRCS:%.c=%.o)
 
-TESTDIR := ../libft
+TESTDIR := ./libft
 
 REPORT := test_report.txt
 
@@ -29,17 +29,17 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(MAKE) -C ../framework
 	$(MAKE) -C $(TESTDIR)
-	$(CC) $(OBJS) -L../framework/ -lunit -L../libft -lft -o $(NAME)
+	$(CC) $(OBJS) -L../framework/ -lunit -L./libft -lft -o $(NAME)
 
 
 %.o:%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 test: all
-	./$(NAME) 
+	@./$(NAME) ||:
 
 report: all
-	-@./$(NAME) > $(REPORT)
+	@./$(NAME) > $(REPORT) ||:
 
 clean:
 	$(MAKE) clean -C ../framework

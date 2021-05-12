@@ -1,0 +1,24 @@
+
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: pwd check
+      run: |
+        pwd
+        ls
+    - name: real_tests make test
+      run: cd real_tests && make && ./real_tests || V=$? && make fclean && exit $V
+    - name: tests make test
+      run: cd tests && make && ./tests || V=$? && make fclean && exit $V

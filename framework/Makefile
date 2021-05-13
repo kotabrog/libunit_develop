@@ -5,7 +5,7 @@ CC := gcc
 CFLAGS := -Wall -Werror -Wextra
 
 
-SRCS := data_init.c print_result.c put_start.c load_test.c launch_tests.c execute_function.c
+SRCS := data_init.c print_result.c put_start.c load_test.c launch_tests.c execute_function.c free_list.c
 
 OBJS := $(SRCS:%.c=%.o)
 

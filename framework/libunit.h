@@ -48,5 +48,6 @@ int				ut_ft_strlen(char *str);
 void			ut_ft_putstr(char *str);
 int				ut_array_convert(int n, char *array);
 char			*ut_ft_itoa(int n);
+void			free_list(t_unit_test *list);
 
 #endif

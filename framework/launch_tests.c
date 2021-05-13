@@ -57,18 +57,21 @@ static int	all_result_update(t_result *result, t_result *temp)
 int	launch_tests(t_unit_test *list, t_result *result, char *test_func_name)
 {
 	int			status;
-	t_result	temp;
+	t_result	temp_result;
+	t_unit_test	*temp_list;
 
-	data_init(&temp);
-	while (list)
+	temp_list = list;
+	data_init(&temp_result);
+	while (temp_list)
 	{
-		status = execute_func(list->func);
-		put_one_result(list->func_name, status);
-		result_update(&temp, status);
-		list = list->next;
+		status = execute_func(temp_list->func);
+		put_one_result(temp_list->func_name, status);
+		result_update(&temp_result, status);
+		temp_list = temp_list->next;
 	}
+	free_list(list);
 	ut_ft_putstr("\n");
-	print_result(test_func_name, temp.success_num, temp.total_num);
-	all_result_update(result, &temp);
+	print_result(test_func_name, temp_result.success_num, temp_result.total_num);
+	all_result_update(result, &temp_result);
 	return (SUCCESS);
 }

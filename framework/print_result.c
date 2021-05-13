@@ -80,4 +80,6 @@ void	print_result(char *str, int success_num, int total_num)
 	ut_ft_putstr(str);
 	ut_ft_putstr(" tests checked.\n");
 	ut_ft_putstr("------------------------\n");
+	free(num1);
+	free(num2);
 }
